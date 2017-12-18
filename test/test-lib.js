@@ -14,12 +14,16 @@ describe('MongoData', function(){
   }
   let plugin
 
-  before(function () {
+  before(() => {
     plugin = new MongoData({
       host: 'localhost:27017',
       database: 'mocha',
       collection: 'test_files'
     })
+  })
+  after(async () => {
+    let c = await plugin._collection()
+    await c.drop()
   })
 
   it('should init() successfully', () => {
