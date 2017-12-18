@@ -6,14 +6,13 @@ const TEST_KEY = 'test-key'
 const FAKE_KEY = 'fake-key'
 
 describe('MongoData', function(){
-  var record = {
+  let record = {
     id: TEST_KEY,
     name: 'cats.png',
     size: 4444,
     mimeType: 'image/png'
   }
-
-  var plugin
+  let plugin
 
   before(function () {
     plugin = new MongoData({
