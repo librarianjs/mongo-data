@@ -18,8 +18,12 @@ describe('MongoData', function(){
     plugin = new MongoData({
       host: 'localhost:27017',
       database: 'mocha',
-      collection: 'librarianTests'
+      collection: 'test_files'
     })
+  })
+
+  it('should init() successfully', () => {
+    return plugin.init()
   })
 
   it('should put() successfully', () => {
